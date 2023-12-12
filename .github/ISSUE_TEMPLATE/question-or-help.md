@@ -2,7 +2,7 @@
 name: Question or Help
 about: Send your question or describe what you need help for
 title: "[QUESTION/HELP]"
-labels: ''
+labels: 'question'
 assignees: ''
 
 ---
