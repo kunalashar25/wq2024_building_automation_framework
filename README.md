@@ -31,10 +31,11 @@ This project will be used to conduct live session on Framework Building in [worq
 1. Take a checkout of this repo
 2. Open it in your editor
 3. Run the script
-4. Check output on the console
-5. Fix editor errors, if any
+4. Check output on the console, message should be displayed as `org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#gotoStore"}`
 
 You're all set for the workshop, see you there! 🎉
+
+**Please Note:** If you are not getting above error, please check if there are any installation or editor errors. Fix them and try to run the script again.
 
 ## Documentations
 
