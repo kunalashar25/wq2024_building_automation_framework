@@ -1,23 +1,18 @@
 package com.ttt.wq;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.ttt.wq.pages.BookStorePage;
 import com.ttt.wq.pages.LoginPage;
 import com.ttt.wq.pages.ProfilePage;
 
-public class BookStoreTest {
+public class BookStoreTest extends BaseTest {
 
         @Test(enabled = false)
         public void searchBook() {
-                WebDriver driver = new ChromeDriver();
-                driver.manage().window().maximize();
-
-                LoginPage loginPage = new LoginPage(driver);
-                ProfilePage profilePage = new ProfilePage(driver);
-                BookStorePage bookStorePage = new BookStorePage(driver);
+                LoginPage loginPage = new LoginPage();
+                ProfilePage profilePage = new ProfilePage();
+                BookStorePage bookStorePage = new BookStorePage();
                 String bookName = "Programming JavaScript Applications";
 
                 loginPage.open();
@@ -27,18 +22,13 @@ public class BookStoreTest {
 
                 bookStorePage.search(bookName);
                 Assert.assertTrue(bookStorePage.isBookVisible(bookName));
-
-                driver.quit();
         }
 
-        @Test(enabled = false)
+        @Test
         public void addBookToProfile() {
-                WebDriver driver = new ChromeDriver();
-                driver.manage().window().maximize();
-
-                LoginPage loginPage = new LoginPage(driver);
-                ProfilePage profilePage = new ProfilePage(driver);
-                BookStorePage bookStorePage = new BookStorePage(driver);
+                LoginPage loginPage = new LoginPage();
+                ProfilePage profilePage = new ProfilePage();
+                BookStorePage bookStorePage = new BookStorePage();
                 String bookName = "Programming JavaScript Applications";
 
                 loginPage.open();
@@ -54,7 +44,5 @@ public class BookStoreTest {
                 bookStorePage.addToCollection();
                 String alertMessage = bookStorePage.getAlertMessage();
                 Assert.assertEquals(alertMessage, "Book added to your collection.");
-
-                driver.quit();
         }
 }

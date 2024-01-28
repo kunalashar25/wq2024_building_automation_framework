@@ -1,13 +1,8 @@
 package com.ttt.wq.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class BookStorePage extends BasePage {
-
-    public BookStorePage(WebDriver driver) {
-        super(driver);
-    }
 
     public void search(String bookName) {
         fillText(By.id("searchBox"), bookName);
@@ -26,6 +21,7 @@ public class BookStorePage extends BasePage {
     }
 
     public void addToCollection() {
+        scrollToElement(By.xpath("//button[text()='Add To Your Collection']"));
         click(By.xpath("//button[text()='Add To Your Collection']"));
     }
 

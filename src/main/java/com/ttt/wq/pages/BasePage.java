@@ -9,18 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.ttt.wq.driverManager.DriverFactory;
+
 public abstract class BasePage {
     private WebDriver driver;
     private WebDriverWait wait;
 
     // only accessible in same package and to child class
-    protected BasePage(WebDriver driver) {
-        this.driver = driver;
+    protected BasePage() {
+        this.driver = DriverFactory.getDriverInstance();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    protected BasePage(WebDriver driver, int waitInSeconds) {
-        this.driver = driver;
+    protected BasePage(int waitInSeconds) {
+        this.driver = DriverFactory.getDriverInstance();
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(waitInSeconds));
     }
 
@@ -48,6 +50,10 @@ public abstract class BasePage {
 
     protected String getAlertText() {
         return getAlert().getText();
+    }
+
+    protected void scrollToElement(By by) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getElement(by));
     }
 
     private Alert getAlert() {
