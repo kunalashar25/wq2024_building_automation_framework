@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import com.ttt.wq.manager.driver.browsertypes.ChromeDriverManager;
 import com.ttt.wq.manager.driver.browsertypes.FirefoxDriverManager;
 import com.ttt.wq.manager.file.reader.PropertyReader;
+import com.ttt.wq.utils.LogHelper;
 
 public class DriverFactory {
     public static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<WebDriver>();
@@ -13,6 +14,8 @@ public class DriverFactory {
         WebDriver driver = null;
 
         String browserType = PropertyReader.getProperty("browser");
+        LogHelper.getLogger().info("Created {} browser instance", browserType);
+
         switch (browserType.toLowerCase()) {
             case "chrome":
                 driver = new ChromeDriverManager().getDriver();

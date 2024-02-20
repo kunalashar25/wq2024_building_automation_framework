@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ttt.wq.manager.driver.DriverFactory;
 import com.ttt.wq.manager.file.reader.PropertyReader;
+import com.ttt.wq.utils.LogHelper;
 
 public abstract class BasePage {
     private WebDriver driver;
@@ -28,7 +29,9 @@ public abstract class BasePage {
     }
 
     protected void goToUrl(String url) {
-        driver.get(PropertyReader.getProperty("baseUrl") + url);
+        String path = PropertyReader.getProperty("baseUrl") + url;
+        LogHelper.getLogger().info("Navigating to " + path);
+        driver.get(path);
         waitForPageLoad();
     }
 
@@ -39,6 +42,7 @@ public abstract class BasePage {
     protected void click(By by) {
         getElement(by).click();
         waitForPageLoad();
+        LogHelper.getLogger().info("Clicked on Element: " + by);
     }
 
     protected String getText(By by) {

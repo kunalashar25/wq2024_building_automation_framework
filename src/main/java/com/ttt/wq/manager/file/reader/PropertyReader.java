@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.ttt.wq.utils.LogHelper;
+
 public class PropertyReader implements IReader {
 
     private String basePath = "src/main/resources/";
@@ -26,6 +28,7 @@ public class PropertyReader implements IReader {
 
     @Override
     public void read(String filePath) {
+        LogHelper.getLogger().info("Reading {} file", filePath);
         File file = new File(filePath);
 
         try (FileReader reader = new FileReader(file)) {

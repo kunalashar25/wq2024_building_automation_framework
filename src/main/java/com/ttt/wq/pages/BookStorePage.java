@@ -2,9 +2,12 @@ package com.ttt.wq.pages;
 
 import org.openqa.selenium.By;
 
+import com.ttt.wq.utils.LogHelper;
+
 public class BookStorePage extends BasePage {
 
     public void search(String bookName) {
+        LogHelper.getLogger().info("Searching for book: {}", bookName);
         fillText(By.id("searchBox"), bookName);
     }
 
