@@ -1,10 +1,11 @@
-package com.ttt.wq;
+package com.ttt.wq.testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.ttt.wq.pages.BookStorePage;
 import com.ttt.wq.pages.LoginPage;
 import com.ttt.wq.pages.ProfilePage;
+import com.ttt.wq.utils.LogHelper;
 
 public class BookStoreTest extends BaseTest {
 
@@ -44,5 +45,16 @@ public class BookStoreTest extends BaseTest {
                 bookStorePage.addToCollection();
                 String alertMessage = bookStorePage.getAlertMessage();
                 Assert.assertEquals(alertMessage, "Book added to your collection.");
+        }
+
+        @Test
+        public void log1() {
+                LogHelper.getLogger().info("inside log1");
+        }
+
+        @Test
+        public void log2() {
+                LogHelper.getLogger().info("inside log2");
+                Assert.assertTrue(false, "Item not added in the cart!");
         }
 }

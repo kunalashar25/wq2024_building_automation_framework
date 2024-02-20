@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+	<listeners>
+		<listener class-name="com.ttt.wq.listeners.TestListeners"/>
+	</listeners>
+
+	<test name= "wqTest" parallel="methods" thread-count="2">
+		<classes>
+			<class name="com.ttt.wq.testcases.BookStoreTest"/>
+		</classes>
+	</test>		
+</suite>
