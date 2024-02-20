@@ -3,7 +3,7 @@ package com.ttt.wq;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import com.ttt.wq.driverManager.DriverFactory;
+import com.ttt.wq.manager.driver.DriverFactory;
 
 public class BaseTest {
     @BeforeMethod

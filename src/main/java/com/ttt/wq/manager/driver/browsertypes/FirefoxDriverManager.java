@@ -1,9 +1,9 @@
-package com.ttt.wq.driverManager.browserTypes;
+package com.ttt.wq.manager.driver.browsertypes;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.ttt.wq.driverManager.IDriverManager;
+import com.ttt.wq.manager.driver.IDriverManager;
 
 public class FirefoxDriverManager implements IDriverManager {
 

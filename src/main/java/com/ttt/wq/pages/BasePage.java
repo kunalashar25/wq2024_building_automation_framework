@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.ttt.wq.driverManager.DriverFactory;
+import com.ttt.wq.manager.driver.DriverFactory;
 
 public abstract class BasePage {
     private WebDriver driver;

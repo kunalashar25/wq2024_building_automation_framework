@@ -1,9 +1,9 @@
-package com.ttt.wq.driverManager;
+package com.ttt.wq.manager.driver;
 
 import org.openqa.selenium.WebDriver;
 
-import com.ttt.wq.driverManager.browserTypes.ChromeDriverManager;
-import com.ttt.wq.driverManager.browserTypes.FirefoxDriverManager;
+import com.ttt.wq.manager.driver.browsertypes.ChromeDriverManager;
+import com.ttt.wq.manager.driver.browsertypes.FirefoxDriverManager;
 
 public class DriverFactory {
     public static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<WebDriver>();

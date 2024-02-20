@@ -1,4 +1,4 @@
-package com.ttt.wq.driverManager;
+package com.ttt.wq.manager.driver;
 
 import org.openqa.selenium.WebDriver;
 
