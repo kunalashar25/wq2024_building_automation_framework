@@ -11,6 +11,7 @@ public class PropertyReader implements IReader {
     private String basePath = "src/main/resources/";
     private String configPath = basePath + "config.properties";
     private String environmentPath = basePath + "environments/";
+    private String secretsPath = basePath + "secrets/";
 
     private static Properties properties = new Properties();
 
@@ -20,6 +21,7 @@ public class PropertyReader implements IReader {
         String env = getProperty("runEnvironment") + ".properties";
 
         read(environmentPath + env);
+        read(secretsPath + env);
     }
 
     @Override
