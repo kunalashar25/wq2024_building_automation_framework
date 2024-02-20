@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class LoginPage extends BasePage {
 
     public void open() {
-        goToUrl("https://demoqa.com/login");
+        goToUrl("login");
     }
 
     public void login(String username, String password) {

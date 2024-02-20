@@ -10,11 +10,16 @@ public class PropertyReader implements IReader {
 
     private String basePath = "src/main/resources/";
     private String configPath = basePath + "config.properties";
+    private String environmentPath = basePath + "environments/";
 
     private static Properties properties = new Properties();
 
     public PropertyReader() {
         read(configPath);
+
+        String env = getProperty("runEnvironment") + ".properties";
+
+        read(environmentPath + env);
     }
 
     @Override
@@ -35,7 +40,7 @@ public class PropertyReader implements IReader {
     }
 
     public static void main(String[] args) {
-        PropertyReader reader = new PropertyReader();
-        System.out.println(reader.getProperty("baseUrl"));
+        new PropertyReader();
+        System.out.println(PropertyReader.getProperty("baseUrl"));
     }
 }

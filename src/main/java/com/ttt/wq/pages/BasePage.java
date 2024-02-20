@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ttt.wq.manager.driver.DriverFactory;
+import com.ttt.wq.manager.file.reader.PropertyReader;
 
 public abstract class BasePage {
     private WebDriver driver;
@@ -27,7 +28,7 @@ public abstract class BasePage {
     }
 
     protected void goToUrl(String url) {
-        driver.get(url);
+        driver.get(PropertyReader.getProperty("baseUrl") + url);
         waitForPageLoad();
     }
 
