@@ -14,6 +14,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void setupPrerequisites() {
+        ThreadContext.put("logFilename", "Prerequisites");
         LogHelper.getLogger().info("Setting prerequisites");
         new PropertyReader();
     }
