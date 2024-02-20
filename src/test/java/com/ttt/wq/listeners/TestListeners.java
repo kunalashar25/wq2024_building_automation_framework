@@ -4,6 +4,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.ttt.wq.utils.LogHelper;
+import com.ttt.wq.utils.Screenshot;
 
 public class TestListeners implements ITestListener {
 
@@ -12,8 +13,10 @@ public class TestListeners implements ITestListener {
     }
 
     public void onTestFailure(ITestResult result) {
-        LogHelper.getLogger().error("Testcase {} execution FAILED!", result.getMethod().getMethodName());
+        String testName = result.getMethod().getMethodName();
+        LogHelper.getLogger().error("Testcase {} execution FAILED!", testName);
         LogHelper.getLogger().error(result.getThrowable());
-    }
 
+        Screenshot.capture(testName, "FAILURE");
+    }
 }
