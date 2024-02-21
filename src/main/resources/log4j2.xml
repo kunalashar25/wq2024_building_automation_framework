@@ -2,13 +2,14 @@
 <Configuration status="INFO">
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c{1}:%L - %msg%n" />
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} test:${ctx:logFilename} %c{1}:%L - %msg%n" />
 		</Console>
 		<Routing name="RoutingAppender">
 			<Routes pattern="$${ctx:logFilename}">
 				<Route>
 					<RollingFile name="Rolling-${ctx:logFilename}"
-						fileName="output/${ctx:logFilename}/${ctx:logFilename}.log" filePattern="output/${ctx:logFilename}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
+						fileName="output/${ctx:logFilename}.log" filePattern="output/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz"
 						append="false">
 						<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %c{1}:%L - %msg%n" />
 						<SizeBasedTriggeringPolicy size="10 MB" />

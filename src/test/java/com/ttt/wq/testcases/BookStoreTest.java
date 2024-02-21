@@ -2,6 +2,8 @@ package com.ttt.wq.testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.ttt.wq.manager.file.reader.PropertyReader;
 import com.ttt.wq.pages.BookStorePage;
 import com.ttt.wq.pages.LoginPage;
 import com.ttt.wq.pages.ProfilePage;
@@ -10,6 +12,7 @@ import com.ttt.wq.utils.LogHelper;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Flaky;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 
@@ -27,7 +30,7 @@ public class BookStoreTest extends BaseTest {
                 String bookName = "Programming JavaScript Applications";
 
                 loginPage.open();
-                loginPage.login("wq-basic", "Wq-basic&01");
+                loginPage.login(PropertyReader.getProperty("username"), PropertyReader.getProperty("password"));
 
                 profilePage.goToBookStore();
 
@@ -36,6 +39,11 @@ public class BookStoreTest extends BaseTest {
         }
 
         @Test(enabled = false)
+        @Severity(SeverityLevel.MINOR)
+        @Description("Add Book to Profile")
+        @Epic("Book Search")
+        @Feature("Book Profiling")
+        @Flaky
         public void addBookToProfile() {
                 LoginPage loginPage = new LoginPage();
                 ProfilePage profilePage = new ProfilePage();
@@ -43,7 +51,7 @@ public class BookStoreTest extends BaseTest {
                 String bookName = "Programming JavaScript Applications";
 
                 loginPage.open();
-                loginPage.login("wq-basic", "Wq-basic&01");
+                loginPage.login(PropertyReader.getProperty("username"), PropertyReader.getProperty("password"));
 
                 profilePage.goToBookStore();
 
@@ -58,13 +66,12 @@ public class BookStoreTest extends BaseTest {
         }
 
         @Test
-        public void log1() {
-                LogHelper.getLogger().info("inside log1");
-        }
-
-        @Test
-        public void log2() {
-                LogHelper.getLogger().info("inside log2");
-                Assert.assertTrue(false, "Item not added in the cart!");
+        @Severity(SeverityLevel.BLOCKER)
+        @Description("Add Book to Cart")
+        @Epic("Book Search")
+        @Feature("Book Profiling")
+        public void addBookToCart() {
+                LogHelper.getLogger().info("inside addBookToCart");
+                Assert.assertTrue(false, "Book not added in the cart!");
         }
 }

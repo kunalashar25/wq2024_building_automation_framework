@@ -13,6 +13,8 @@ import com.ttt.wq.manager.driver.DriverFactory;
 import com.ttt.wq.manager.file.reader.PropertyReader;
 import com.ttt.wq.utils.LogHelper;
 
+import io.qameta.allure.Step;
+
 public abstract class BasePage {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -28,6 +30,7 @@ public abstract class BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(waitInSeconds));
     }
 
+    @Step
     protected void goToUrl(String url) {
         String path = PropertyReader.getProperty("baseUrl") + url;
         LogHelper.getLogger().info("Navigating to " + path);
@@ -35,32 +38,39 @@ public abstract class BasePage {
         waitForPageLoad();
     }
 
+    @Step
     protected void fillText(By by, String text) {
         getElement(by).sendKeys(text);
     }
 
+    @Step
     protected void click(By by) {
         getElement(by).click();
         waitForPageLoad();
         LogHelper.getLogger().info("Clicked on Element: " + by);
     }
 
+    @Step
     protected String getText(By by) {
         return getElement(by).getText();
     }
 
+    @Step
     protected boolean isDisplayed(By by) {
         return getElement(by).isDisplayed();
     }
 
+    @Step
     protected String getAlertText() {
         return getAlert().getText();
     }
 
+    @Step
     protected void scrollToElement(By by) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getElement(by));
     }
 
+    @Step
     private Alert getAlert() {
         wait.until(ExpectedConditions.alertIsPresent());
         return driver.switchTo().alert();
