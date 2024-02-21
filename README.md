@@ -56,3 +56,29 @@ If you have received one of the two expected results, You're all set for the wor
 ## Post workshop
 
 - Feel free to ask [here](https://github.com/kunalashar25/wq2024_building_automation_framework/issues/new/choose) if you have any questions or if something is unclear. 🙂
+
+## Framework Highlights
+
+- [Page Object Model](https://medium.com/tech-tajawal/page-object-model-pom-design-pattern-f9588630800b)
+- [Driver Factory using Factory Pattern](https://refactoring.guru/design-patterns/factory-method)
+- [Test specific Log Routing](https://logging.apache.org/log4j/2.x/manual/appenders.html#RoutingAppender)
+- [Integrated TestNG Listeners](https://www.javatpoint.com/testng-listeners)
+- [Utilizing TestNG Hooks](https://toolsqa.com/testng/testng-annotations/)
+- Test Data externalization
+- Environment specific configuration storage
+- Segregated Environment secrets
+- Parallel Test Execution on local
+- [Execution Results Reporting with Allure](https://allurereport.org/docs/testng/)
+
+## Future Enhancements
+
+These improvements can elevate this framework to a higher level.
+
+- [Dynamically Building TestNG.xml file](https://youtu.be/cP3HmqTAC54?si=0fu4TLx1LYy-NlkP)
+- [Retrying Failed Tests](https://medium.com/@chathumalsangeeth/how-to-implement-the-testng-retry-mechanism-for-failed-test-cases-e4f600e6dc1d)
+- [Test Execution History Tracking in Allure](https://allurereport.org/docs/history-and-retries/)
+- [Enabling Selenium Grid for execution](https://www.selenium.dev/documentation/grid/)
+- [Integrating with CI - Jenkins](https://www.softwaretestinghelp.com/integration-of-jenkins-with-selenium-webdriver/)
+- [Run on Cloud - BrowserStack](https://www.browserstack.com/)
+- [Making API requests w/ HttpClient](https://www.baeldung.com/java-9-http-client)
+- [Generating fake test data](https://www.baeldung.com/java-faker)
