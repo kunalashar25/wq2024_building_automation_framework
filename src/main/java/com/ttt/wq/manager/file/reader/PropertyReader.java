@@ -1,11 +1,8 @@
 package com.ttt.wq.manager.file.reader;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Properties;
-
 import com.ttt.wq.utils.LogHelper;
 
 public class PropertyReader implements IReader {
@@ -21,7 +18,6 @@ public class PropertyReader implements IReader {
         read(configPath);
 
         String env = getProperty("runEnvironment") + ".properties";
-
         read(environmentPath + env);
         read(secretsPath + env);
     }
@@ -33,10 +29,9 @@ public class PropertyReader implements IReader {
 
         try (FileReader reader = new FileReader(file)) {
             properties.load(reader);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            LogHelper.getLogger().error("Error while reading the file", e);
+            System.exit(0);
         }
     }
 

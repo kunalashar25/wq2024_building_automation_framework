@@ -14,8 +14,6 @@ public class DriverFactory {
         WebDriver driver = null;
 
         String browserType = PropertyReader.getProperty("browser");
-        LogHelper.getLogger().info("Created {} browser instance", browserType);
-
         switch (browserType.toLowerCase()) {
             case "chrome":
                 driver = new ChromeDriverManager().getDriver();
@@ -24,12 +22,13 @@ public class DriverFactory {
                 driver = new FirefoxDriverManager().getDriver();
                 break;
             default:
+                LogHelper.getLogger().error("Unable to create browser instance for {}", browserType);
                 throw new IllegalArgumentException("Unsupported browser type provided");
         }
 
         driverThreadLocal.set(driver);
         driver.manage().window().maximize();
-
+        LogHelper.getLogger().info("Created {} browser instance", browserType);
         return driver;
     }
 
