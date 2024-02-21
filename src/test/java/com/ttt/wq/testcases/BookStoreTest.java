@@ -7,9 +7,19 @@ import com.ttt.wq.pages.LoginPage;
 import com.ttt.wq.pages.ProfilePage;
 import com.ttt.wq.utils.LogHelper;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+
 public class BookStoreTest extends BaseTest {
 
-        @Test(enabled = false)
+        @Test
+        @Severity(SeverityLevel.BLOCKER)
+        @Description("Search for a random book")
+        @Epic("Book Search")
+        @Feature("Search with pagination")
         public void searchBook() {
                 LoginPage loginPage = new LoginPage();
                 ProfilePage profilePage = new ProfilePage();
@@ -25,7 +35,7 @@ public class BookStoreTest extends BaseTest {
                 Assert.assertTrue(bookStorePage.isBookVisible(bookName));
         }
 
-        @Test
+        @Test(enabled = false)
         public void addBookToProfile() {
                 LoginPage loginPage = new LoginPage();
                 ProfilePage profilePage = new ProfilePage();

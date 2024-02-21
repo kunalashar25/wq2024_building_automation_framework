@@ -17,6 +17,6 @@ public class TestListeners implements ITestListener {
         LogHelper.getLogger().error("Testcase {} execution FAILED!", testName);
         LogHelper.getLogger().error(result.getThrowable());
 
-        Screenshot.capture(testName, "FAILURE");
+        Screenshot.capture("ON FAILURE");
     }
 }

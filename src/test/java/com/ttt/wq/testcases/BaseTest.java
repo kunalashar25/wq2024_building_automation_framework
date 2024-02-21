@@ -15,7 +15,7 @@ public class BaseTest {
 
     @BeforeSuite
     public void setupPrerequisites() {
-        Directory.clean("output");
+        Directory.clean("output", "allure-results", "allure-report");
         ThreadContext.put("logFilename", "Prerequisites");
         LogHelper.getLogger().info("Setting prerequisites");
         new PropertyReader();

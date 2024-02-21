@@ -1,3 +1,5 @@
 target
 src/main/resources/secrets
 output/
+allure-results
+allure-report
