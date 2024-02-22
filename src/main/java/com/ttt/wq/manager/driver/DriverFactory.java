@@ -1,7 +1,6 @@
 package com.ttt.wq.manager.driver;
 
 import org.openqa.selenium.WebDriver;
-
 import com.ttt.wq.manager.driver.browsertypes.ChromeDriverManager;
 import com.ttt.wq.manager.driver.browsertypes.FirefoxDriverManager;
 import com.ttt.wq.manager.file.reader.PropertyReader;

@@ -1,7 +1,6 @@
 package com.ttt.wq.manager.directory;
 
 import java.io.File;
-
 import com.ttt.wq.utils.LogHelper;
 
 public class Directory {
@@ -17,7 +16,7 @@ public class Directory {
     private static void removeFiles(File dir) {
         File[] files = dir.listFiles();
 
-        if (dir.exists()) { // throws error when doesn't exist
+        if (dir.exists()) { // throws error when folder/file doesn't exist
             for (File file : files) {
                 if (file.isDirectory()) {
                     removeFiles(file);

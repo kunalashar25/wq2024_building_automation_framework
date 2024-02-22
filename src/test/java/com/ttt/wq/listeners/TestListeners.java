@@ -2,7 +2,6 @@ package com.ttt.wq.listeners;
 
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.ttt.wq.utils.LogHelper;
 import com.ttt.wq.utils.Screenshot;
 

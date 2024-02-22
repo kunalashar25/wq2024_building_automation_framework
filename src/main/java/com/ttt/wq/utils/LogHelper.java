@@ -11,6 +11,11 @@ public class LogHelper {
         return LogManager.getLogger(callingClassName);
     }
 
+    /**
+     * Passes running test name to Log4j2 for logging and routing
+     * 
+     * @param testName
+     */
     public static synchronized void testLogger(String testName) {
         ThreadContext.put("logFilename", testName);
     }

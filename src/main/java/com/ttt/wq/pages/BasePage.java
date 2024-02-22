@@ -8,11 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.ttt.wq.manager.driver.DriverFactory;
 import com.ttt.wq.manager.file.reader.PropertyReader;
 import com.ttt.wq.utils.LogHelper;
-
 import io.qameta.allure.Step;
 
 public abstract class BasePage {

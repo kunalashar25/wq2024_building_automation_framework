@@ -1,9 +1,7 @@
 package com.ttt.wq.testcases;
 
 import org.testng.annotations.Test;
-
 import com.ttt.wq.utils.LogHelper;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;

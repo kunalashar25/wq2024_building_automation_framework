@@ -8,7 +8,6 @@ import com.ttt.wq.pages.BookStorePage;
 import com.ttt.wq.pages.LoginPage;
 import com.ttt.wq.pages.ProfilePage;
 import com.ttt.wq.utils.LogHelper;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -18,7 +17,7 @@ import io.qameta.allure.SeverityLevel;
 
 public class BookStoreTest extends BaseTest {
 
-        @Test
+        @Test(groups = "chrome")
         @Severity(SeverityLevel.BLOCKER)
         @Description("Search for a random book")
         @Epic("Book Search")
@@ -65,7 +64,7 @@ public class BookStoreTest extends BaseTest {
                 Assert.assertEquals(alertMessage, "Book added to your collection.");
         }
 
-        @Test
+        @Test(groups = "firefox")
         @Severity(SeverityLevel.BLOCKER)
         @Description("Add Book to Cart")
         @Epic("Book Search")

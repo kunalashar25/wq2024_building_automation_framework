@@ -5,7 +5,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-
 import com.ttt.wq.manager.directory.Directory;
 import com.ttt.wq.manager.driver.DriverFactory;
 import com.ttt.wq.manager.file.reader.PropertyReader;
@@ -24,14 +23,17 @@ public class BaseTest {
     @BeforeMethod
     public void setupBrowser(ITestResult result) {
         String testName = result.getMethod().getMethodName();
+
+        // to run test case on different browsers, pass this value to createDriver()
+        String groupName = result.getMethod().getGroups()[0];
         LogHelper.testLogger(testName);
-        LogHelper.getLogger().info("Starting test {}", testName);
+        LogHelper.getLogger().info("Starting test {} with group {}", testName, groupName);
 
         DriverFactory.createDriver();
     }
 
     @AfterMethod
-    public void teardown() {
+    public void closeBrowser() {
         DriverFactory.getDriverInstance().quit();
         LogHelper.getLogger().info("Closed browser instance");
     }
