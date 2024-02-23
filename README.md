@@ -81,4 +81,5 @@ These improvements can elevate this framework to a higher level.
 - [Integrating with CI - Jenkins](https://www.softwaretestinghelp.com/integration-of-jenkins-with-selenium-webdriver/)
 - [Run on Cloud - BrowserStack](https://www.browserstack.com/)
 - [Making API requests w/ HttpClient](https://www.baeldung.com/java-9-http-client)
+- [Externalize Test Data with @DataProviders](https://www.lambdatest.com/blog/how-to-use-dataproviders-in-testng-with-examples/)
 - [Generating fake test data](https://www.baeldung.com/java-faker)
